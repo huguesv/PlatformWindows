@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Label="NuGet Package">
+    <Authors>Hugues Valois</Authors>
+    <Description>Library of Windows-only platform APIs.</Description>
+    <Copyright>Copyright (c) Hugues Valois 2024-$([System.DateTime]::Now.ToString(yyyy))</Copyright>
+    <PackageProjectUrl>https://github.com/huguesv/PlatformWindows</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/huguesv/PlatformWindows</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>windows;win32;taskbar;shell;power;sleep</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>0.1.0</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup Label="NuGet Package files">
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="System.Collections.ObjectModel" />
+    <Using Include="System.Diagnostics" />
+    <Using Include="System.Globalization" />
+    <Using Include="System.Reflection" />
+    <Using Include="System.Runtime.InteropServices" />
+    <Using Include="System.Runtime.Serialization" />
+    <Using Include="System.Security" />
+    <Using Include="System.Security.Cryptography" />
+    <Using Include="System.Text" />
+    <Using Include="System.Xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWin32">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
